@@ -6,7 +6,7 @@ import shutil
 # work_dir = r"d:\Downloads\TV\了不起的麦瑟尔夫人\\"
 # work_dir = r"d:\Downloads\TV"
 work_dir = os.getcwd()
-print('work_dir: ', work_dir,'\n')
+print('\nwork_dir: ', work_dir,'\n')
 
 def split2group(string,seperator,groups,groupBy=0):
     nameSplits=string.split(seperator)
@@ -48,14 +48,13 @@ with os.scandir(work_dir) as it:
 print("================Starting================")
 # pprint(dirs)
 for (k) in dirs:
-    print(work_dir,'\t',k)
+    # print(work_dir,'\t',k)
     path = os.path.join(work_dir,k)
     print(k,'\t',path)
     if not os.path.exists(path):
         print('Making dir:'+path)
         os.mkdir(path)
     for v in dirs[k]:
-        print('  +',v)
-        print('  +--Moving:'+ os.path.join(work_dir,v))
+        print('  +',v,'\t==>>\t'+ os.path.join(work_dir,v))
         shutil.move(src=os.path.join(work_dir,v), dst=os.path.join(path, v))
 print("================Finished================")
