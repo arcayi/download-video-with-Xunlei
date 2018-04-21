@@ -21,7 +21,7 @@ def split2group(string,seperator,groups,groupBy=0):
 
 
 dirs = defaultdict(lambda:[])
-seps = ['.S0', '.S1', '.第', "第","]EP",".Ep"]
+seps = ['.S0', '.S1', '.第', "第","]EP",".Ep",".E0"]
 include_suffix = ['.mp4','.rmvb','mkv','.avi']
 with os.scandir(work_dir) as it:
     for entry in it:
